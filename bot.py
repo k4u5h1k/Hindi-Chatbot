@@ -46,7 +46,7 @@ def command_interface():
             s = input('You: ')
         except EOFError:
             s = 'अलविदा'
-        print(s)
+        #print(s)
         while s[-1] in '!.':
             s = s[:-1]
         print("Bot : " + bot.respond(s))
