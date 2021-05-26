@@ -11,9 +11,9 @@
                 "Hya there"
           ],
           "responses": [
-                "Hi human, please tell me your GeniSys user",
-                "Hello human, please tell me your GeniSys user",
-                "Hola human, please tell me your GeniSys user"
+                "Hi human",
+                "Hello human",
+                "Hola human"
           ],
           "extension":  {
                 "function": "",
@@ -31,14 +31,14 @@
     {
           "intent": "GreetingResponse",
           "text": [
-                "My user is Adam",
-                "This is Adam",
-                "I am Adam",
-                "It is Adam",
-                "My user is Bella",
-                "This is Bella",
-                "I am Bella",
-                "It is Bella"
+                "My user is <HUMAN>",
+                "This is <HUMAN>",
+                "I am <HUMAN>",
+                "It is <HUMAN>",
+                "My user is <HUMAN>",
+                "This is <HUMAN>",
+                "I am <HUMAN>",
+                "It is <HUMAN>"
           ],
           "responses": [
                 "Great! Hi <HUMAN>! How can I help?",
@@ -119,13 +119,13 @@
                 "Hello hope you are doing well?"
           ],
           "responses": [
-                "Hello, I am great, how are you? Please tell me your GeniSys user",
-                "Hello, how are you? I am great thanks! Please tell me your GeniSys user",
-                "Hello, I am good thank you, how are you? Please tell me your GeniSys user",
-                "Hi, I am great, how are you? Please tell me your GeniSys user",
-                "Hi, how are you? I am great thanks! Please tell me your GeniSys user",
-                "Hi, I am good thank you, how are you? Please tell me your GeniSys user",
-                "Hi, good thank you, how are you? Please tell me your GeniSys user"
+                "Hello, I am great, how are you?",
+                "Hello, how are you? I am great thanks!",
+                "Hello, I am good thank you, how are you?",
+                "Hi, I am great, how are you?",
+                "Hi, how are you? I am great thanks!",
+                "Hi, I am good thank you, how are you?",
+                "Hi, good thank you, how are you?"
           ],
           "extension":  {
                 "function": "",
@@ -143,14 +143,14 @@
     {
           "intent": "CourtesyGreetingResponse",
           "text": [
-                "Good thanks! My user is Adam",
-                "Good thanks! This is Adam",
-                "Good thanks! I am Adam",
-                "Good thanks! It is Adam",
-                "Great thanks! My user is Bella",
-                "Great thanks! This is Bella",
-                "Great thanks! I am Bella",
-                "Great thanks! It is Bella"
+                "Good thanks! My user is <HUMAN>",
+                "Good thanks! This is <HUMAN>",
+                "Good thanks! I am <HUMAN>",
+                "Good thanks! It is <HUMAN>",
+                "Great thanks! My user is <HUMAN>",
+                "Great thanks! This is <HUMAN>",
+                "Great thanks! I am <HUMAN>",
+                "Great thanks! It is <HUMAN>"
           ],
           "responses": [
                 "Great! Hi <HUMAN>! How can I help?",
