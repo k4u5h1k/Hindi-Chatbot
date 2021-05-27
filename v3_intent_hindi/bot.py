@@ -24,7 +24,7 @@ class Bot:
         }
 
         self.hdf = pd.read_json('hindi_intent.json')
-        self.model = tf.keras.models.load_model('model')
+        self.model = tf.keras.models.load_model('model', compile=False)
 
         with open('pickles/ohe', 'rb') as handle:
             self.ohe = pickle.load(handle)
@@ -63,6 +63,6 @@ class Bot:
 
         return random.choice(choices)
 
-if __name__ == '__main__':
-    myBot = Bot()
-    print(myBot.reply('hello'))
+# if __name__ == '__main__':
+#     myBot = Bot()
+#     print(myBot.reply('hello'))
