@@ -55,8 +55,8 @@ class ChatApplication:
         self.msg_entry.bind("<Return>", self._on_enter_pressed)
         
         # send button
-        send_button = Button(bottom_label, text="Send", font=FONT_BOLD, width=20, bg=BG_GRAY,
-                             command=lambda: self._on_enter_pressed(None))
+        send_button = Button(bottom_label, text="Send", bg=BG_GRAY,
+                width=20, command=lambda: self._on_enter_pressed(None))
         send_button.place(relx=0.77, rely=0.008, relheight=0.06, relwidth=0.22)
      
     def _on_enter_pressed(self, event):
@@ -73,7 +73,7 @@ class ChatApplication:
         self.text_widget.insert(END, msg1)
         self.text_widget.configure(state=DISABLED)
         
-        msg2 = f"{Bot}: {c.reply(msg)}\n\n"
+        msg2 = f"Genisys: {c.reply(msg)}\n\n"
         self.text_widget.configure(state=NORMAL)
         self.text_widget.insert(END, msg2)
         self.text_widget.configure(state=DISABLED)

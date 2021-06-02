@@ -7,9 +7,13 @@ import requests
 import pandas as pd
 import tensorflow as tf
 from inltk.inltk import get_sentence_encoding
+from inltk.inltk import setup
+import pyttsx3
 
 class Bot:
     def __init__(self):
+        print('Setting up hindi support')
+        setup('hi')
         self.subscription_key = '1352efe917df4167b7e990696200e04a'
         self.endpoint =  'https://api.cognitive.microsofttranslator.com/'
 
@@ -32,6 +36,8 @@ class Bot:
         with open('pickles/le', 'rb') as handle:
             self.le = pickle.load(handle)
 
+        self.reader = pyttsx3.init()
+
     def _translate(self, text):
         body = []
         count = 0
@@ -53,6 +59,14 @@ class Bot:
         else:
             return response[0]['translations'][0]['text']
 
+    def say(self, text):
+        for voice in self.reader.getProperty('voices'):
+            if voice.languages[0]=='hi_IN' and voice.gender=='VoiceGenderFemale':
+                self.reader.setProperty('voice', voice.id)
+                self.reader.say(text)
+                self.reader.runAndWait()
+                self.reader.stop()
+
     def reply(self, message):
         message = self._translate(message)
 
@@ -63,6 +77,6 @@ class Bot:
 
         return random.choice(choices)
 
-# if __name__ == '__main__':
-#     myBot = Bot()
-#     print(myBot.reply('hello'))
+if __name__ == '__main__':
+    myBot = Bot()
+    myBot.say(myBot.reply('hello'))
