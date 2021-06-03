@@ -120,11 +120,7 @@
           ],
           "responses": [
                 "Hello, I am great, how are you?",
-                "Hello, how are you? I am great thanks!",
                 "Hello, I am good thank you, how are you?",
-                "Hi, I am great, how are you?",
-                "Hi, how are you? I am great thanks!",
-                "Hi, I am good thank you, how are you?",
                 "Hi, good thank you, how are you?"
           ],
           "extension":  {

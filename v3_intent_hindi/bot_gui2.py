@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 from bot import *
 
 app = Flask(__name__)
-
 c = Bot()
 
 @app.route("/")
