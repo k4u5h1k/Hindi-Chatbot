@@ -1,0 +1,88 @@
+<html>
+<head>
+    <link rel="stylesheet" href="./static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <title>Bot</title>
+</head>
+<body>
+    <h1 style="text-align: center; margin: 20px;">Hindi Chatbot</h1>
+    <div class="container">
+        <div class="chat-header">
+            <div class="profile">
+                <div class="left">
+                    <h2>Bot</h2>
+                    <span>online</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-box">
+            <div id="chat">
+                <p class="bottext"><span>THIS IS A CHATBOT FOR PEOPLE WHO UNDERSTAND HINDI</span></p>
+            <!-- appending messages here -->
+                <!-- <div class="chat-r">
+                    <div class="sp"></div>
+                    <div class="mess mess-r">
+                        <p>
+                            
+                        </p>
+                        <div class="check">
+                            <span>4:00 PM</span>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- <div class="chat-l">
+                    <div class="mess">
+                        <p>
+                            
+                        </p>
+                        <div class="check">
+                            <span>4:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="sp"></div>
+                </div>-->
+            </div> 
+            
+            <div class="chat-footer">
+				<div id="userin">
+                    <input id="user" type="text" name="msg" placeholder="Type to chat">
+                    <input style="float: left;" id="btn" type="submit" value="Send">
+                </div>
+				
+        </div>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#user").keypress(function(e) {
+                if(e.which == 13) {
+                    getBotResponse();
+                }
+            });
+
+            $("#btn").click(function() {
+                getBotResponse();
+            });
+            
+        });
+
+        function getBotResponse(){
+            var rawText = $("#user").val();
+            var userHtml = '<div class="chat-r"><div class="sp"></div><div class="mess mess-r"><p>'+rawText+'</p><div class="check"><span>4:00 PM</span></div></div></div>';
+            // '<p class = "userText"><span>' + rawText + '</span></p>';
+            $("#user").val("");
+            $("#chat").append(userHtml);
+            document.getElementById('userin').scrollIntoView({block:'start',behaviour:'smooth'});
+            $.get("/get", { msg : rawText }).done(function(data) {
+
+                var botHtml = '<div class="chat-l"><div class="mess"><p>'+ data + '</p><div class="check"><span>4:00 PM</span></div></div><div class="sp"></div></div>';
+                // '<p class ="bottext"><span>' + data + '</span></p>';
+                $("#chat").append(botHtml);
+                document.getElementById('#userin').scrollIntoView({block : 'start',behaviour:'smooth'});
+            });
+        }
+
+            
+    </script>
+</body>
+</html>
