@@ -30,7 +30,7 @@ body{
 
 .profile {
 	width: 100%;
-	background: #036055;
+	background: #034260;
 	display: flex;
 	align-items: center;
 	height: 80px;
@@ -44,14 +44,6 @@ body{
 	vertical-align: bottom;
 	color: #fff;
 	font-size: 20px;
-}
-
-.profile span {
-	color: #ccc;
-	position: absolute;
-	top: 50px;
-	left: 20px;
-	font-size: 14px;
 }
 
 .profile .left {
@@ -149,7 +141,7 @@ body{
 }
 
 #btn{
-	background-color: #4CAF50; /* Green */
+	background-color: #034260; /* Blue */
 	border: none;
 	color: white;
 	padding: 10px;
