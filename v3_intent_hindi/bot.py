@@ -71,11 +71,16 @@ class Bot:
         message = self._translate(message)
 
         encoding = get_sentence_encoding(message,'hi').reshape(1,1,400)
-        result = self.ohe.inverse_transform(self.model(encoding))
-        result = self.le.inverse_transform(result)[0]
-        choices = self.hdf[self.hdf['intent']==result]['responses'].to_list()[0]
 
-        return random.choice(choices)
+        if tf.reduce_max(self.model(encoding))>0.3:
+            result = self.ohe.inverse_transform(self.model(encoding))
+            result = self.le.inverse_transform(result)[0]
+            choices = self.hdf[self.hdf['intent']==result]['responses'].to_list()[0]
+
+            return random.choice(choices)
+
+        else:
+            return self.translate("I don't understand what you mean")
 
 if __name__ == '__main__':
     myBot = Bot()
