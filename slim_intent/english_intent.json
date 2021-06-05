@@ -4,16 +4,12 @@
           "text": [
                 "Hi",
                 "Hi there",
-                "Hola",
                 "Hello",
                 "Hello there",
-                "Hya",
-                "Hya there"
           ],
           "responses": [
                 "Hi human",
                 "Hello human",
-                "Hola human"
           ],
           "extension":  {
                 "function": "",
@@ -41,10 +37,8 @@
                 "It is <HUMAN>"
           ],
           "responses": [
-                "Great! Hi <HUMAN>! How can I help?",
                 "Good! Hi <HUMAN>, how can I help you?",
                 "Cool! Hello <HUMAN>, what can I do for you?",
-                "OK! Hola <HUMAN>, how can I help you?",
                 "OK! hi <HUMAN>, what can I do for you?"
           ],
           "extension":  {
@@ -113,19 +107,14 @@
                 "How are you?",
                 "Hi how are you?",
                 "Hello how are you?",
-                "Hola how are you?",
                 "How are you doing?",
                 "Hope you are doing well?",
                 "Hello hope you are doing well?"
           ],
           "responses": [
-                "Hello, I am great, how are you?",
-                "Hello, how are you? I am great thanks!",
-                "Hello, I am good thank you, how are you?",
-                "Hi, I am great, how are you?",
-                "Hi, how are you? I am great thanks!",
-                "Hi, I am good thank you, how are you?",
-                "Hi, good thank you, how are you?"
+                "Hello, I am good, how are you?",
+                "Hello, I am doing good. How are you?",,
+                "Hi, I am good. Thank you, how are you?",
           ],
           "extension":  {
                 "function": "",
@@ -156,7 +145,6 @@
                 "Great! Hi <HUMAN>! How can I help?",
                 "Good! Hi <HUMAN>, how can I help you?",
                 "Cool! Hello <HUMAN>, what can I do for you?",
-                "OK! Hola <HUMAN>, how can I help you?",
                 "OK! hi <HUMAN>, what can I do for you?"
           ],
           "extension":  {
@@ -268,7 +256,8 @@
           "responses": [
                 "You can call me Geni",
                 "You may call me Geni",
-                "Call me Geni"
+                "Call me Geni",
+                "Geni"
           ],
           "extension":  {
                 "function": "",
@@ -358,8 +347,6 @@
           "responses": [
                 "No problem!",
                 "Happy to help!",
-                "Any time!",
-                "My pleasure"
           ],
           "extension":  {
                 "function": "",
@@ -410,13 +397,11 @@
                 "Do you understand me",
                 "Do you know what I am saying",
                 "Do you get me",
-                "Comprendo",
                 "Know what I mean"
           ],
           "responses": [
                 "Well I would not be a very clever AI if I did not would I?",
-                "I read you loud and clear!",
-                "I do in deed!"
+                "I completely understand what you are saying!",
           ],
           "extension":  {
                 "function": "",
@@ -439,7 +424,6 @@
                 "Enough talking",
                 "Please be quiet",
                 "Quiet",
-                "Shhh"
           ],
           "responses": [
                 "I am sorry to disturb you",
@@ -460,36 +444,9 @@
           "entities": []
     },
     {
-          "intent": "Swearing",
-          "text": [
-                "fuck off",
-                "fuck",
-                "twat",
-                "shit"
-          ],
-          "responses": [
-                "Please do not swear",
-                "How rude",
-                "That is not very nice"
-          ],
-          "extension":  {
-                "function": "",
-                "entities": false,
-                "responses": []
-          },
-          "context":  {
-                "in": "",
-                "out": "",
-                "clear": false
-          },
-          "entityType": "NA",
-          "entities": []
-    },
-    {
           "intent": "GoodBye",
           "text": [
                 "Bye",
-                "Adios",
                 "See you later",
                 "Goodbye"
           ],
@@ -518,8 +475,8 @@
                 "Thanks for the help, goodbye",
                 "Thank you, bye",
                 "Thank you, goodbye",
-                "Thanks goodbye",
-                "Thanks good bye"
+                "Thanks, goodbye",
+                "Thanks, good bye"
           ],
           "responses": [
                 "No problem, goodbye",
