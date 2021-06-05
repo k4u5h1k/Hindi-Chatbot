@@ -6,7 +6,6 @@
                 "Hi there",
                 "Hello",
                 "Hello there",
-                "Hya",
                 "Hya there"
           ],
           "responses": [
@@ -39,10 +38,10 @@
                 "It is <HUMAN>"
           ],
           "responses": [
-                "Great! Hi <HUMAN>! How can I help?",
-                "Good! Hi <HUMAN>, how can I help you?",
-                "Cool! Hello <HUMAN>, what can I do for you?",
-                "OK! hi <HUMAN>, what can I do for you?"
+                "I am good! Hi <HUMAN>! How can I help?",
+                "I am good! Hi <HUMAN>, how can I help you?",
+                "I am good! Hello <HUMAN>, what can I do for you?",
+                "I am good! hi <HUMAN>, what can I do for you?"
           ],
           "extension":  {
                 "function": "extensions.gHumans.updateHuman",
@@ -51,6 +50,7 @@
                       "Hi %%HUMAN%%! How can I help?",
                       "Hi %%HUMAN%%, how can I help you?",
                       "Hello %%HUMAN%%, what can I do for you?",
+                      "Hola %%HUMAN%%, how can I help you?",
                       "OK hi %%HUMAN%%, what can I do for you?"
                 ]
           },
@@ -114,9 +114,8 @@
                 "Hello hope you are doing well?"
           ],
           "responses": [
-                "Hello, I am great, how are you?",
-                "Hello, I am good thank you, how are you?",
-                "Hi, good thank you, how are you?"
+                "Hello, I am good. thank you, how are you?",
+                "Hello, thank you, how are you?"
           ],
           "extension":  {
                 "function": "",
@@ -134,20 +133,13 @@
     {
           "intent": "CourtesyGreetingResponse",
           "text": [
-                "Good thanks! My user is <HUMAN>",
-                "Good thanks! This is <HUMAN>",
-                "Good thanks! I am <HUMAN>",
-                "Good thanks! It is <HUMAN>",
-                "Great thanks! My user is <HUMAN>",
-                "Great thanks! This is <HUMAN>",
-                "Great thanks! I am <HUMAN>",
-                "Great thanks! It is <HUMAN>"
+                "Thanks! This is <HUMAN>",
+                "Thanks! I am <HUMAN>",
+                "Thanks! It is <HUMAN>"
           ],
           "responses": [
-                "Great! Hi <HUMAN>! How can I help?",
-                "Good! Hi <HUMAN>, how can I help you?",
-                "Cool! Hello <HUMAN>, what can I do for you?",
-                "OK! hi <HUMAN>, what can I do for you?"
+                "Good! Hello <HUMAN>, how can I help you?",
+                "OK! Hello <HUMAN>, what can I do for you?"
           ],
           "extension":  {
                 "function": "extensions.gHumans.updateHuman",
@@ -400,12 +392,11 @@
                 "Do you understand me",
                 "Do you know what I am saying",
                 "Do you get me",
+                "Comprendo",
                 "Know what I mean"
           ],
           "responses": [
-                "Well I would not be a very clever AI if I did not would I?",
-                "I read you loud and clear!",
-                "I do in deed!"
+                "I understand you clearly!"
           ],
           "extension":  {
                 "function": "",
@@ -427,8 +418,7 @@
                 "Stop talking",
                 "Enough talking",
                 "Please be quiet",
-                "Quiet",
-                "Shhh"
+                "Quiet"
           ],
           "responses": [
                 "I am sorry to disturb you",
@@ -458,7 +448,7 @@
           "responses": [
                 "See you later",
                 "Have a nice day",
-                "Bye! Come back again soon."
+                "Bye! See you soon."
           ],
           "extension":  {
                 "function": "",
@@ -486,7 +476,7 @@
           "responses": [
                 "No problem, goodbye",
                 "Not a problem! Have a nice day",
-                "Bye! Come back again soon."
+                "Bye! See you soon."
           ],
           "extension":  {
                 "function": "",
