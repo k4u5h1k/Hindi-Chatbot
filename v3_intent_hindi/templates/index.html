@@ -68,7 +68,6 @@
                 }
             });
 
-            
 
             $("#btn").click(function() {
                 getBotResponse(dt);
@@ -78,17 +77,17 @@
 
         function getBotResponse(dt){
             var rawText = $("#user").val();
-            var userHtml = '<div class="chat-r"><div class="sp"></div><div class="mess mess-r"><p>'+rawText+'</p><div class="check"><span>'+ dt +'</span></div></div></div>';
-            // '<p class = "userText"><span>' + rawText + '</span></p>';
-            $("#user").val("");
-            $("#chat").append(userHtml);
-            document.getElementById('userin').scrollIntoView({block:'start',behaviour:'smooth'});
+            $.get("/translate", { msg : rawText }).then(function(translation) {
+                console.log(translation);
+                var userHtml = '<div class="chat-r"><div class="sp"></div><div class="mess mess-r"><p>'+translation+'</p><div class="check"><span>'+ dt +'</span></div></div></div>';
+                $("#user").val("");
+                $("#chat").append(userHtml);
+            })
             $.get("/get", { msg : rawText }).done(function(data) {
 
-                var botHtml = '<div class="chat-l"><div class="mess"><p>'+ data + '</p><div class="check"><span>'+ dt +'</span></div></div><div class="sp"></div></div>';
+                var botHtml = '<div class="chat-l"><div class="mess"><p style="margin-left: 20px">'+ data + '</p><div class="check"><span>'+ dt +'</span></div></div><div class="sp"></div></div>' + "<script>new Audio('./static/reply.wav').play()"
                 // '<p class ="bottext"><span>' + data + '</span></p>';
                 $("#chat").append(botHtml);
-                document.getElementById('#userin').scrollIntoView({block : 'start',behaviour:'smooth'});
             });
         }
 

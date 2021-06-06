@@ -27,7 +27,7 @@ class Bot:
             'Ocp-Apim-Subscription-Region': 'centralindia',
         }
 
-        self.hdf = pd.read_json('hindi_intent.json')
+        self.hdf = pd.read_json('slimmed.json')
         self.model = tf.keras.models.load_model('model', compile=False)
 
         with open('pickles/ohe', 'rb') as handle:
@@ -36,7 +36,6 @@ class Bot:
         with open('pickles/le', 'rb') as handle:
             self.le = pickle.load(handle)
 
-        self.reader = pyttsx3.init()
 
     def _translate(self, text):
         body = []
@@ -59,17 +58,17 @@ class Bot:
         else:
             return response[0]['translations'][0]['text']
 
-    def say(self, text):
-        for voice in self.reader.getProperty('voices'):
+    def say_to_file(self, text):
+        reader = pyttsx3.init()
+        for voice in reader.getProperty('voices'):
             if voice.languages[0]=='hi_IN' and voice.gender=='VoiceGenderFemale':
-                self.reader.setProperty('voice', voice.id)
-                self.reader.say(text)
-                self.reader.runAndWait()
-                self.reader.stop()
+                fullPath = os.path.join(os.getcwd(), "static/reply.wav")
+                reader.setProperty('voice', voice.id)
+                reader.save_to_file(text, fullPath)
+                reader.runAndWait()
 
     def reply(self, message):
         message = self._translate(message)
-
         encoding = get_sentence_encoding(message,'hi').reshape(1,1,400)
 
         if tf.reduce_max(self.model(encoding))>0.3:
@@ -80,7 +79,7 @@ class Bot:
             return random.choice(choices)
 
         else:
-            return self.translate("I don't understand what you mean")
+            return self._translate("I don't understand what you are trying to say")
 
 if __name__ == '__main__':
     myBot = Bot()
