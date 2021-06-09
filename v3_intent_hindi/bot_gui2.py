@@ -6,7 +6,6 @@ from time import sleep
 app = Flask(__name__)
 c = Bot()
 
-
 @app.route("/")
 def index():
     return render_template("index.html")

@@ -83,4 +83,6 @@ class Bot:
 
 if __name__ == '__main__':
     myBot = Bot()
-    myBot.say(myBot.reply('hello'))
+    myBot.say_to_file(myBot.reply('hello'))
+    print(myBot._translate('Test'))
+    print(myBot.reply('Hello'))
